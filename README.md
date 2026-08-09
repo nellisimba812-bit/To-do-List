@@ -14,12 +14,12 @@
 Через меню (интерактивный режим):
 python "To-do list.py"
 
-Через команды (без меню):
-- python "To-do list.py V2" add "текст задачи"
-- python "To-do list.py V2" list
-- python "To-do list.py V2" done 1  (1-номер задачи, может быть другим)
-- python "To-do list.py V2 edit 1 "новый текст"
-- python "To-do list.py V2" delete 1
+Через команды (терминал):
+- python "To-do list.py" add "текст задачи"
+- python "To-do list.py" list
+- python "To-do list.py" done 1  (1-номер задачи, может быть другим)
+- python "To-do list.py" edit 1 "новый текст"
+- python "To-do list.py" delete 1
 
 Полный список команд:
-python "To-do List.py" --help
+python "To-do list.py" --help
