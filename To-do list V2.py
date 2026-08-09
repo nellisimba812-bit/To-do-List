@@ -69,8 +69,8 @@ def delete_task(index):  #Удаляет задачу
     except IndexError:
         print('The index does not exist')
 
-
-if args.command == "add":   
+#Запуск через команды в терминале
+if args.command == "add":
     add_task(text=args.text)
 
 elif args.command == "edit":
@@ -84,3 +84,56 @@ elif args.command == "done":
 
 elif args.command == "delete":
     delete_task(index=args.index)
+
+#Запуск через меню
+elif args.command is None:
+
+    while True:
+        print('|||||||')
+        print('1. Add a task')
+        print('2. Edit task')
+        print('3. Mark done')
+        print('4. Delete task')
+        print('5. Show todos')
+        print('6. Exit')
+        command = input('What would you like to do?: ')
+
+        if command == '6':
+            print('Goodbye!')
+            break
+
+        elif command == '1':
+            try:
+                add_task(text=input("Input a task: "))
+            except IndexError:
+                print('Please enter a valid number')
+
+
+        elif command == '2':
+            try:
+                show_todos()
+                edit_task(index=int(input("Select an option: ")), text=input("Input a edit task: "))
+            except ValueError:
+                print('Please enter a valid number')
+
+        elif command == '3':
+            try:
+                show_todos()
+                mark_done(index=int(input("Select an option: ")))
+            except ValueError:
+                print('Please enter a valid number')
+
+        elif command == '4':
+            try:
+                show_todos()
+                delete_task(index=int(input("Select an option: ")))
+            except ValueError:
+                print('Please enter a valid number')
+
+        elif command == '5':
+            show_todos()
+
+        else:
+            print('Invalid command')
+
+
