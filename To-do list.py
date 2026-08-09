@@ -103,12 +103,8 @@ elif args.command is None:
             break
 
         elif command == '1':
-            try:
-                add_task(text=input("Input a task: "))
-            except IndexError:
-                print('Please enter a valid number')
-
-
+            add_task(text=input("Input a task: "))
+        
         elif command == '2':
             try:
                 show_todos()
